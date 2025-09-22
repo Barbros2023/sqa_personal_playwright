@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2' // optional for reporting
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Playwright
+    testImplementation 'com.microsoft.playwright:playwright:1.49.0'
+
+    // JUnit 5
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+
+    // JUnit Platform Suite (needed for @Suite, @IncludeEngines, etc.)
+    testImplementation 'org.junit.platform:junit-platform-suite:1.10.0'
+
+    // Cucumber
+    testImplementation 'io.cucumber:cucumber-java:7.14.0'
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.14.0'
+
+    // Assertions
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+}
+
+test {
+    useJUnitPlatform()
+}
